@@ -207,7 +207,7 @@ class KerasNet(ZooKerasLayer):
     def get_layer(self, name):
         layer = [l for l in self.layers if l.name() == name]
         if (len(layer) == 0):
-            raise Exception("Could not find layer named: %s" + name)
+            raise Exception("Could not find a layer named: %s" + name)
         elif (len(layer) > 1):
             raise Exception("There are multiple layers named: %s" + name)
         else:
