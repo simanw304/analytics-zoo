@@ -214,7 +214,7 @@ class Variable[T: ClassTag] private[zoo] (val node: ModuleNode[T], var name: Str
     implicit ev: TensorNumeric[T]) extends Serializable {
 
   if (name == null) {
-    name = node.element.getName()
+    name = s"${node.element.getClass.getSimpleName}_${node.element.getName()}"
   } else {
     node.element.setName(name)
   }
